@@ -1,10 +1,10 @@
 class Question < ApplicationRecord
   has_many :answer_choices
+  has_many :question_revisions
+  accepts_nested_attributes_for :answer_choices
 
-  after_create do
-    ["A", "B", "C", "D"].each do |letter|
-      answer_choices.create letter: letter
-    end
+  def update_attributes *attrs
+    question_revisions.create(attrs).first
   end
 
   def answer
