@@ -1,5 +1,6 @@
 class Question < ApplicationRecord
   has_many :answer_choices
+  accepts_nested_attributes_for :answer_choices
 
   end
 
