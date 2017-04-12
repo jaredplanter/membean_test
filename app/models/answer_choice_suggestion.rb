@@ -1,3 +1,3 @@
 class AnswerChoiceSuggestion < ApplicationRecord
-  belongs_to :answer
+  belongs_to :answer_choice
 end
