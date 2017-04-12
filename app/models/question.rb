@@ -4,7 +4,7 @@ class Question < ApplicationRecord
   accepts_nested_attributes_for :answer_choices
 
   def update_attributes *attrs
-    question_revisions.create attrs
+    question_revisions.create(attrs).first
   end
 
   def answer
